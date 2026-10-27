@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habesha Eatery | Fine Ethiopian Dining & Cultural Lounge</title>
+    <meta name="description" content="Experience authentic Ethiopian fine dining, formal cultural mesob feasts, and traditional coffee ceremonies at Habesha Eatery.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <aside class="top-bar">
+        <div class="top-bar-inner">
+            <span>✨ Welcome to Hallu's Family Habesha Eatery — Authentic Hospitality Since 2012</span>
+            <div class="top-bar-contacts">
+                <span>📍 Bole Olympia, Addis Ababa</span>
+                <span class="divider">•</span>
+                <span>📞 +251 11 662 4890</span>
+                <span class="divider">•</span>
+                <span class="service-badge">🟢 Open Today: 11:30 AM – 11:00 PM</span>
+            </div>
+        </div>
+    </aside>
+
+    <div class="page">
+        <!-- Main Sticky Navbar -->
+        <header class="navbar" id="site-header">
+            <div class="brand">
+                <a href="#home" class="logo">
+                    <span class="logo-accent">HABESHA</span>
+                    <span class="logo-sub">EATERY & LOUNGE</span>
+                </a>
+            </div>
+
+            <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#current-reservations" class="nav-link">My Bookings <span class="nav-count" id="booking-badge">1</span></a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- User Profile / Login Toggle -->
+                <div class="user-auth-slot" id="user-auth-slot">
+                    <button type="button" class="btn btn-outline" id="login-open-btn">
+                        <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Member Sign In</span>
+                    </button>
+                </div>
+                <a class="btn btn-primary cta-btn" href="#reserve">
+                    <span>Reserve a Table</span>
+                    <svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge">Curated Fine Dining & Cultural Heritage</div>
+                <h1>A Regal Taste of Authentic Ethiopian Tradition</h1>
+                <p class="hero-subtitle">Owned & crafted with love by Hallu's family</p>
+                <p class="hero-desc">
+                    Immerse yourself in rich berbere aromas, hand-poured spiced clarified butter,
+                    fluffy 100% teff injera, and the heartwarming communal spirit of gursha.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#reserve" class="btn btn-primary btn-large">Book Formal Reservation</a>
+                    <a href="#menu" class="btn btn-secondary btn-large">Explore Menu & Specialties</a>
+                    <a href="#current-reservations" class="btn btn-glass btn-large">Check Booking Status</a>
+                </div>
+
+                <div class="hero-perks">
+                    <div class="perk-item">
+                        <span class="perk-icon">🥘</span>
+                        <div>
+                            <strong>Slow-Cooked Stews</strong>
+                            <small>Family heirloom recipes</small>
+                        </div>
+                    </div>
+                    <div class="perk-item">
+                        <span class="perk-icon">☕</span>
+                        <div>
+                            <strong>Live Buna Ceremony</strong>
+                            <small>Fresh roasted highland beans</small>
+                        </div>
+                    </div>
+                    <div class="perk-item">
+                        <span class="perk-icon">🍷</span>
+                        <div>
+                            <strong>Organic Tej & Spices</strong>
+                            <small>Artisanal Ethiopian honey wine</small>
+                        </div>
+                    </div>
+                    <div class="perk-item">
+                        <span class="perk-icon">👑</span>
+                        <div>
+                            <strong>Formal Dining Suites</strong>
+                            <small>Private VIP & mesob halls</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Active Reservations Section -->
+        <section id="current-reservations" class="content current-reservations-section">
+            <div class="section-header">
+                <span class="section-tag">GUEST CONCIERGE</span>
+                <h2>Active Reservations & Booking Tracker</h2>
+                <p>Review, track, or manage your formal reservations in real time.</p>
+            </div>
+
+            <!-- Filter by Reservation Type -->
+            <div class="res-filter-bar">
+                <span class="filter-label">Filter by Reservation Type:</span>
+                <div class="type-pills">
+                    <button class="pill-btn active" data-filter="all">All Types (<span id="count-all">1</span>)</button>
+                    <button class="pill-btn" data-filter="Formal Dining Table">Formal Dining</button>
+                    <button class="pill-btn" data-filter="Cultural Mesob Experience">Cultural Mesob</button>
+                    <button class="pill-btn" data-filter="Executive VIP Suite">Executive VIP</button>
+                    <button class="pill-btn" data-filter="Chef's Heritage Tasting">Chef's Tasting</button>
+                </div>
+            </div>
+
+            <!-- Cards Container -->
+            <div class="reservations-grid" id="reservations-container">
+                <!-- Dynamically populated or default reservation cards -->
+            </div>
+
+            <div class="reservations-footer-cta">
+                <p>Looking to arrange a new banquet or private diplomatic gathering?</p>
+                <a href="#reserve" class="btn btn-secondary btn-sm">+ Add New Formal Reservation</a>
+            </div>
+        </section>
+
+        <!-- Culinary Menu Section -->
+        <main>
+            <section id="menu" class="content menu-section">
+                <div class="section-header">
+                    <span class="section-tag">CULINARY EXCELLENCE</span>
+                    <h2>Our Curated Menu</h2>
+                    <p>Every dish is crafted using sustainably sourced Ethiopian spices and heirloom family methods.</p>
+                </div>
+
+                <!-- Menu Category Tabs -->
+                <div class="menu-tabs">
+                    <button class="menu-tab-btn active" data-category="all">All Dishes</button>
+                    <button class="menu-tab-btn" data-category="signatures">Chef Signatures</button>
+                    <button class="menu-tab-btn" data-category="traditional">Traditional Wots</button>
+                    <button class="menu-tab-btn" data-category="vegan">Vegetarian & Fasting (Tsom)</button>
+                    <button class="menu-tab-btn" data-category="beverages">Tej & Coffee Rituals</button>
+                </div>
+
+                <div class="menu-grid" id="menu-grid">
+                    <!-- Item 1: Doro Wat -->
+                    <article class="card" data-category="signatures traditional">
+                        <span class="badge popular">National Pride</span>
+                        <div class="card-img-wrap">
+                            <img
+                                src="https://eggs.ca/wp-content/uploads/2024/06/EFC-doro-wat-hero-1280x720-1.jpg"
+                                alt="Authentic Ethiopian doro wat chicken stew with hard-boiled eggs"
+                                loading="lazy"
+                            >
+                            <span class="card-type-tag">Signature Poultry</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <h3>Royal Doro Wat</h3>
+                                <div class="spice-level" title="Medium-Hot Spice">🌶️🌶️🌶️</div>
+                            </div>
+                            <p>Tender free-range chicken drumsticks simmered for 8 hours in aromatic berbere paste, red onions, garlic, and seasoned clarified butter (niter kibbeh), served with slow-cooked eggs and fresh teff injera.</p>
+                            <div class="card-dietary">
+                                <span class="tag">Halal</span>
+                                <span class="tag">Family Heirloom</span>
+                            </div>
+                            <div class="card-bottom">
+                                <span class="price">480 ETB</span>
+                                <button class="btn-card-add" onclick="handleReservePreselect('Royal Doro Wat')">Order for Table</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 2: Kitfo -->
+                    <article class="card" data-category="signatures traditional">
+                        <span class="badge special">Chef's Signature</span>
+                        <div class="card-img-wrap">
+                            <img
+                                src="https://www.bing.com/th/id/OIP.hdmKH9ImJ0Ivw8GSly1x0wHaE8?w=193&h=135&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=ImgAns&rm=2"
+                                alt="Traditional Ethiopian Kitfo seasoned beef tartare"
+                                loading="lazy"
+                            >
+                            <span class="card-type-tag">Delicacy</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <h3>Gurage Special Kitfo</h3>
+                                <div class="spice-level" title="Spicy Mitmita">🌶️🌶️</div>
+                            </div>
+                            <p>Finely hand-minced prime tenderloin infused with warming mitmita chili and fragrant herbal clarified butter (kibbeh). Served with ayib (fresh house cottage cheese), gomen (collard greens), and kocho flatbread.</p>
+                            <div class="card-dietary">
+                                <span class="tag">Available Leb-Leb or Raw</span>
+                                <span class="tag">High Protein</span>
+                            </div>
+                            <div class="card-bottom">
+                                <span class="price">550 ETB</span>
+                                <button class="btn-card-add" onclick="handleReservePreselect('Gurage Special Kitfo')">Order for Table</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 3: Beef Tibs -->
+                    <article class="card" data-category="traditional">
+                        <div class="card-img-wrap">
+                            <img
+                                src="https://www.bing.com/th/id/OIP.VZKi9jA2Mk0YOuDybIWcFgHaHa?w=193&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=ImgAns&rm=2"
+                                alt="Sizzling Ethiopian Derek Tibs on a clay burner"
+                                loading="lazy"
+                            >
+                            <span class="card-type-tag">Clay Pot Sizzler</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <h3>Shekla Beef Tibs</h3>
+                                <div class="spice-level" title="Mild / Moderate">🌶️</div>
+                            </div>
+                            <p>Sizzling skillet cubes of aged beef sautéed with caramelized shallots, sliced jalapeños, rosemary sprigs, and fragrant awaze chili sauce, presented on an authentic charcoal clay burner.</p>
+                            <div class="card-dietary">
+                                <span class="tag">House Favorite</span>
+                                <span class="tag">Gluten-Free Option</span>
+                            </div>
+                            <div class="card-bottom">
+                                <span class="price">490 ETB</span>
+                                <button class="btn-card-add" onclick="handleReservePreselect('Shekla Beef Tibs')">Order for Table</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 4: Shiro Merek -->
+                    <article class="card" data-category="vegan traditional">
+                        <span class="badge fasting">100% Vegan (Tsom)</span>
+                        <div class="card-img-wrap">
+                            <img
+                                src="https://th.bing.com/th/id/OIP.vkCAsrQHh-JSrDAl5IdaOwHaFy?w=187&h=183&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                                alt="A steaming clay pot of Ethiopian shiro wot"
+                                loading="lazy"
+                            >
+                            <span class="card-type-tag">Vegetarian Delight</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <h3>Clay Pot Tegabino Shiro</h3>
+                                <div class="spice-level" title="Mildly Spiced">🌶️</div>
+                            </div>
+                            <p>Velvety roasted chickpea and dried split-pea flour stew cooked with garlic, ginger, and cardamom, bubbling enthusiastically in a traditional earthenware bowl with soft injera rolls.</p>
+                            <div class="card-dietary">
+                                <span class="tag">Vegan / Fasting</span>
+                                <span class="tag">Plant-Based</span>
+                            </div>
+                            <div class="card-bottom">
+                                <span class="price">340 ETB</span>
+                                <button class="btn-card-add" onclick="handleReservePreselect('Clay Pot Tegabino Shiro')">Order for Table</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 5: Beyaynetu Grand Platter -->
+                    <article class="card" data-category="signatures vegan">
+                        <span class="badge special">Communal Feast</span>
+                        <div class="card-img-wrap">
+                            <img
+                                src="data:image/webp;base64,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"
+                                alt="Grand colorful Ethiopian Beyaynetu vegan platter"
+                                loading="lazy"
+                            >
+                            <span class="card-type-tag">Communal Platter</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <h3>Grand Royal Beyaynetu</h3>
+                                <div class="spice-level" title="Assorted Flavors">🌶️🌶️</div>
+                            </div>
+                            <p>An opulent mosaic of eight vegetarian delicacies: Kik Alicha (yellow split peas), Misir Wat (red lentils), Gomen (stewed greens), Fosolia (green beans & carrots), Atkilt Wot, beetroot salad, and shiro on giant injera.</p>
+                            <div class="card-dietary">
+                                <span class="tag">100% Plant-Based</span>
+                                <span class="tag">Serves 2-3 Persons</span>
+                            </div>
+                            <div class="card-bottom">
+                                <span class="price">620 ETB</span>
+                                <button class="btn-card-add" onclick="handleReservePreselect('Grand Royal Beyaynetu')">Order for Table</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 6: Traditional Coffee -->
+                    <article class="card" data-category="beverages">
+                        <span class="badge beverage">Royal Ritual</span>
+                        <div class="card-img-wrap">
+                            <img
+                                src="https://th.bing.com/th/id/OIP.Y3AhgIbN_OGo1Wc3Ci5u0gHaEo?w=273&h=250&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                                alt="Traditional Ethiopian coffee ceremony with jebena and popcorn"
+                                loading="lazy"
+                            >
+                            <span class="card-type-tag">Traditional Drink</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <h3>Traditional Ethiopian Coffee</h3>
+                                <div class="spice-level">✨ Ceremonial</div>
+                            </div>
+                            <p>Experience the authentic Ethiopian coffee ceremony with jebena and popcorn, prepared over hot coals with burning frankincense and toasted barley/popcorn.</p>
+                            <div class="card-dietary">
+                                <span class="tag">Alcoholic / Non-Alc Coffee</span>
+                                <span class="tag">Cultural Pairing</span>
+                            </div>
+                            <div class="card-bottom">
+                                <span class="price">265 ETB</span>
+                                <button class="btn-card-add" onclick="handleReservePreselect('Tej & Buna Flight')">Order for Table</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Formal Cultural Experience Feature -->
+            <section id="experience" class="content experience-section">
+                <div class="experience-grid">
+                    <div class="experience-text">
+                        <span class="section-tag">UNPARALLELED AMBIENCE</span>
+                        <h2>The Art of Ethiopian Hospitality & The Gursha Tradition</h2>
+                        <p class="lead-text">
+                            In Ethiopian culture, dining is never a solitary activity — it is a sacrament of connection, friendship, and shared generosity.
+                        </p>
+                        <div class="experience-features">
+                            <div class="exp-feature">
+                                <div class="exp-icon">🤲</div>
+                                <div>
+                                    <h4>The Ritual of Gursha</h4>
+                                    <p>Feeding one another with one's own hands as an enduring gesture of respect, affection, and solidarity.</p>
+                                </div>
+                            </div>
+                            <div class="exp-feature">
+                                <div class="exp-icon">🪑</div>
+                                <div>
+                                    <h4>The Handwoven Mesob</h4>
+                                    <p>Gather around our authentic straw mesobs crafted by Ethiopian artisans, providing an intimate, regal setting.</p>
+                                </div>
+                            </div>
+                            <div class="exp-feature">
+                                <div class="exp-icon">💨</div>
+                                <div>
+                                    <h4>Frankincense & Live Buna Roasting</h4>
+                                    <p>Watch raw green coffee beans roasted tableside while soothing incense elevates the dining hall.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experience-cta">
+                            <a href="#reserve" class="btn btn-primary">Book the Mesob Cultural Experience</a>
+                        </div>
+                    </div>
+                    <div class="experience-gallery">
+                        <div class="gallery-card main-img">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Habesha Eatery interior dining room" loading="lazy">
+                            <div class="img-badge">Grand Dining Hall</div>
+                        </div>
+                        <div class="gallery-sub-grid">
+                            <div class="gallery-card">
+                                <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=500&q=80" alt="Fine dining table arrangement" loading="lazy">
+                                <div class="img-badge">Private Suite</div>
+                            </div>
+                            <div class="gallery-card">
+                                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=500&q=80" alt="Traditional table with candles" loading="lazy">
+                                <div class="img-badge">VIP Mesob</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FORMAL RESERVATION SECTION -->
+            <section id="reserve" class="content formal-reservation-section">
+                <div class="reservation-card-wrapper">
+                    <div class="reservation-header-block">
+                        <span class="section-tag-gold">TABLE CONCIERGE & BOOKINGS</span>
+                        <h2>Formal Table & Event Reservation</h2>
+                        <p>
+                            Kindly reserve your preferred dining experience below. Formal confirmations, table assignments, and reference codes are issued instantly.
+                        </p>
+                    </div>
+
+                    <form class="formal-reservation-form" id="formal-reservation-form">
+                        <!-- Step 1: Choose Formal Reservation Type -->
+                        <div class="form-section-title">
+                            <span class="step-num">1</span>
+                            <h3>Select Your Reservation Type</h3>
+                        </div>
+
+                        <div class="reservation-type-selector">
+                            <label class="res-type-card active">
+                                <input type="radio" name="reservationType" value="Formal Dining Table" checked required>
+                                <div class="res-type-content">
+                                    <span class="res-type-icon">🍽️</span>
+                                    <h4>Formal Dining Table</h4>
+                                    <p>White linen table setting, candlelit ambiance, personalized full course service.</p>
+                                    <span class="res-type-badge">Standard Fine Dining</span>
+                                </div>
+                            </label>
+
+                            <label class="res-type-card">
+                                <input type="radio" name="reservationType" value="Cultural Mesob Experience" required>
+                                <div class="res-type-content">
+                                    <span class="res-type-icon">🧺</span>
+                                    <h4>Cultural Mesob Experience</h4>
+                                    <p>Traditional low mesob basket table, communal Gursha platter, and VIP coffee ceremony.</p>
+                                    <span class="res-type-badge">Authentic Cultural</span>
+                                </div>
+                            </label>
+
+                            <label class="res-type-card">
+                                <input type="radio" name="reservationType" value="Executive VIP Suite" required>
+                                <div class="res-type-content">
+                                    <span class="res-type-icon">👑</span>
+                                    <h4>Executive VIP Suite</h4>
+                                    <p>Private enclosed room for business summits, diplomats, or private family celebrations.</p>
+                                    <span class="res-type-badge">Exclusive Room</span>
+                                </div>
+                            </label>
+
+                            <label class="res-type-card">
+                                <input type="radio" name="reservationType" value="Chef's Heritage Tasting" required>
+                                <div class="res-type-content">
+                                    <span class="res-type-icon">👨‍🍳</span>
+                                    <h4>Chef's Heritage Tasting</h4>
+                                    <p>A curated 7-course culinary journey with artisanal Tej pairing and dessert flight.</p>
+                                    <span class="res-type-badge">Gastronomy Special</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Step 2: Date, Time & Guest Count -->
+                        <div class="form-section-title">
+                            <span class="step-num">2</span>
+                            <h3>Schedule & Seating Requirements</h3>
+                        </div>
+
+                        <div class="form-row grid-3">
+                            <div class="form-group">
+                                <label for="res-date">Date <span class="required">*</span></label>
+                                <input type="date" id="res-date" name="date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-time">Preferred Service Slot <span class="required">*</span></label>
+                                <select id="res-time" name="time" required>
+                                    <option value="" disabled selected>Choose service time</option>
+                                    <optgroup label="Lunch Service">
+                                        <option value="12:00 PM">12:00 PM - Early Lunch</option>
+                                        <option value="01:00 PM">01:00 PM - Prime Lunch</option>
+                                        <option value="02:00 PM">02:00 PM - Late Lunch</option>
+                                    </optgroup>
+                                    <optgroup label="Afternoon Coffee & Snacks">
+                                        <option value="03:30 PM">03:30 PM - High Coffee & Buna</option>
+                                        <option value="04:30 PM">04:30 PM - Sunset Gathering</option>
+                                    </optgroup>
+                                    <optgroup label="Formal Evening Dinner">
+                                        <option value="06:30 PM">06:30 PM - First Dinner Seating</option>
+                                        <option value="07:30 PM">07:30 PM - Prime Dinner Seating</option>
+                                        <option value="08:30 PM">08:30 PM - Cultural Night Seating</option>
+                                        <option value="09:30 PM">09:30 PM - Late Evening Feast</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-guests">Number of Guests <span class="required">*</span></label>
+                                <select id="res-guests" name="guests" required>
+                                    <option value="" disabled selected>Select party size</option>
+                                    <option value="1 Guest">1 Guest (Solo Executive)</option>
+                                    <option value="2 Guests">2 Guests (Couple / Romantic)</option>
+                                    <option value="3 Guests">3 Guests (Intimate Mesob)</option>
+                                    <option value="4 Guests">4 Guests (Standard Dining)</option>
+                                    <option value="5-6 Guests">5-6 Guests (Family Table)</option>
+                                    <option value="7-10 Guests">7-10 Guests (Large Gathering)</option>
+                                    <option value="10+ VIP Gala">10+ Guests (Private Suite Event)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row grid-2">
+                            <div class="form-group">
+                                <label for="res-seating">Seating Atmosphere Preference</label>
+                                <select id="res-seating" name="seating">
+                                    <option value="Main Dining Hall (Elegant & Lively)">Main Dining Hall (Elegant & Lively)</option>
+                                    <option value="Cultural Mesob Alcove (Intimate Cushions)">Cultural Mesob Alcove (Intimate Cushions)</option>
+                                    <option value="Garden Terrace (Open Air)">Garden Terrace (Open Air)</option>
+                                    <option value="Quiet Corner (Business & Private)">Quiet Corner (Business & Private)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-occasion">Special Occasion</label>
+                                <select id="res-occasion" name="occasion">
+                                    <option value="Casual Fine Dining">Casual Fine Dining</option>
+                                    <option value="Birthday Celebration">Birthday Celebration</option>
+                                    <option value="Anniversary">Anniversary</option>
+                                    <option value="Business & Corporate Dinner">Business & Corporate Dinner</option>
+                                    <option value="Cultural Tourist Welcome">Cultural Tourist Welcome</option>
+                                    <option value="Diplomatic Hosting">Diplomatic Hosting</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Contact & Formal Identification -->
+                        <div class="form-section-title">
+                            <span class="step-num">3</span>
+                            <h3>Guest Contact Details</h3>
+                        </div>
+
+                        <div class="form-row grid-3">
+                            <div class="form-group">
+                                <label for="res-title">Title</label>
+                                <select id="res-title" name="title">
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Ms.">Ms.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Dr.">Dr.</option>
+                                    <option value="Ato">Ato</option>
+                                    <option value="W/ro">W/ro</option>
+                                    <option value="Ambassador">Ambassador</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="res-name" name="name" placeholder="e.g. Dawit Hallelujah" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-phone">Telephone / WhatsApp <span class="required">*</span></label>
+                                <input type="tel" id="res-phone" name="phone" placeholder="+251 91 123 4567" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row grid-2">
+                            <div class="form-group">
+                                <label for="res-email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="res-email" name="email" placeholder="dawit@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="res-dietary">Dietary Preferences / Notes</label>
+                                <select id="res-dietary" name="dietary">
+                                    <option value="No Restrictions">No Restrictions</option>
+                                    <option value="Fasting / 100% Vegan (Tsom)">Fasting / 100% Vegan (Tsom)</option>
+                                    <option value="Strictly 100% Teff Injera (Gluten-Free)">Strictly 100% Teff Injera (Gluten-Free)</option>
+                                    <option value="Halal Only">Halal Only</option>
+                                    <option value="Nut / Allergen Sensitive">Nut / Allergen Sensitive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="res-requests">Special Requests / Formal Arrangements</label>
+                            <textarea id="res-requests" name="requests" rows="3" placeholder="E.g., Birthday cake arrangement, specific table location, private wine pairing preferences, or arrival details."></textarea>
+                        </div>
+
+                        <!-- Formal Reservation Policy Callout -->
+                        <div class="formal-policy-box">
+                            <div class="policy-icon">📋</div>
+                            <div class="policy-text">
+                                <strong>Habesha Eatery Formal Dining Protocol:</strong>
+                                <span>We kindly observe a Smart Casual or Traditional Ethiopian attire policy. Reserved tables are held with priority for 20 minutes past your confirmed time. Cancellations are complimentary up to 2 hours prior to service.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-submit-row">
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span>Complete & Confirm Formal Reservation</span>
+                                <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                            </button>
+                            <span class="instant-confirm-note">🔒 Instant Digital Confirmation & SMS Notification</span>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="content about-section">
+                <div class="about-grid">
+                    <div class="about-text-content">
+                        <span class="section-tag">HERITAGE & TRADITION</span>
+                        <h2>The Heart of Hallu's Family Hospitality</h2>
+                        <p class="about-lead">
+                            Founded on ancestral Ethiopian culinary principles, Habesha Eatery was born from the desire to present the soul of Addis Ababa to discerning food lovers.
+                        </p>
+                        <p>
+                            Every spice blend — from our deeply complex 15-spice <em>berbere</em> to our fiery <em>mitmita</em> — is sun-dried, roasted, and blended in small batches following recipes guarded across four generations.
+                        </p>
+                        <p>
+                            We bake our sourdough injera fresh three times daily from 100% pure organic brown and white highland teff, yielding that irreplaceable spongy honeycomb texture and tangy aroma essential for absorbing rich sauces.
+                        </p>
+
+                        <div class="about-stats">
+                            <div class="stat-box">
+                                <span class="stat-num">12+</span>
+                                <span class="stat-desc">Years of Culinary Excellence</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-num">100%</span>
+                                <span class="stat-desc">Authentic Highland Teff</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-num">4.9 ★</span>
+                                <span class="stat-desc">Over 2,400 Guest Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-visuals-col">
+                        <div class="about-feature-img">
+                            <img src="https://images.unsplash.com/photo-1559713526-55474897ee0e?auto=format&fit=crop&w=800&q=80" alt="Warm restaurant dining table" loading="lazy">
+                            <div class="quote-card">
+                                <blockquote>“To eat together from one plate is to declare everlasting fellowship.”</blockquote>
+                                <cite>— Ethiopian Proverb</cite>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guest Testimonials -->
+            <section class="content testimonials-section">
+                <div class="section-header">
+                    <span class="section-tag">TESTIMONIALS</span>
+                    <h2>Esteemed Guest Reviews</h2>
+                    <p>What our patrons say about their dining and cultural celebrations.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="test-body">“The Executive VIP Suite was flawless for our international delegation dinner. The Royal Doro Wat and Gurage Kitfo received unanimous praise, and the live Buna ceremony capped an unforgettable evening.”</p>
+                        <div class="test-author">
+                            <div class="author-avatar">AM</div>
+                            <div>
+                                <strong>Ambassador Marcus Sterling</strong>
+                                <small>Diplomatic Mission, Addis Ababa</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="test-body">“Best Ethiopian dining experience in town! The online booking system made planning my mother’s 60th birthday seamless. The Cultural Mesob layout felt so authentic and regal.”</p>
+                        <div class="test-author">
+                            <div class="author-avatar">SB</div>
+                            <div>
+                                <strong>Selamawit Bekele</strong>
+                                <small>Addis Ababa Resident</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="test-body">“As someone with strict celiac disease, their verified 100% teff gluten-free injera combined with the Grand Royal Beyaynetu was an absolute dream come true. Highly recommended!”</p>
+                        <div class="test-author">
+                            <div class="author-avatar">ET</div>
+                            <div>
+                                <strong>Elena Thorne</strong>
+                                <small>Gastronomy Blogger</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact & Hours Section -->
+            <section id="contact" class="content contact-section">
+                <div class="section-header">
+                    <span class="section-tag">VISIT & CONNECT</span>
+                    <h2>Location, Hours & Inquiries</h2>
+                    <p>We welcome you to our family sanctuary. Valet parking and private concierge available.</p>
+                </div>
+
+                <div class="contact-card-grid">
+                    <div class="contact-info-card">
+                        <div class="contact-info-item">
+                            <div class="ci-icon">📍</div>
+                            <div>
+                                <h4>Our Address</h4>
+                                <p>Bole Olympia, Next to Ambassador Hall<br>Addis Ababa, Ethiopia</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="ci-icon">⏰</div>
+                            <div>
+                                <h4>Operating Hours</h4>
+                                <p><strong>Monday – Thursday:</strong> 11:30 AM – 10:30 PM</p>
+                                <p><strong>Friday – Saturday:</strong> 11:30 AM – 11:30 PM</p>
+                                <p><strong>Sunday Cultural Brunch:</strong> 10:00 AM – 10:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="ci-icon">📞</div>
+                            <div>
+                                <h4>Direct Concierge</h4>
+                                <p><strong>Direct Desk:</strong> +251 11 662 4890</p>
+                                <p><strong>VIP / Events Line:</strong> +251 91 123 4567</p>
+                                <p><strong>Email:</strong> reservations@habeshaeatery.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-action-card">
+                        <h3>Private Dining & Corporate Banquets</h3>
+                        <p>Planning an executive retreat, diplomatic gala, or wedding feast? Our events director will customize your menu, decor, and live acoustic krar music.</p>
+                        <div class="contact-features-list">
+                            <span>✓ Private dining up to 80 seated guests</span>
+                            <span>✓ Custom dietary & fasting menus</span>
+                            <span>✓ Dedicated sommelier & tej pairing</span>
+                        </div>
+                        <a href="mailto:events@habeshaeatery.com" class="btn btn-secondary">Inquire For Private Events</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Formal Footer -->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">HABESHA EATERY</div>
+                    <p>Elevating Ethiopian heritage through exceptional cuisine, authentic mesob dining, and warm family hospitality.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Telegram">✈️</a>
+                        <a href="#" aria-label="TripAdvisor">🦉</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Curated Menu</a></li>
+                        <li><a href="#experience">The Experience</a></li>
+                        <li><a href="#current-reservations">Current Bookings</a></li>
+                        <li><a href="#reserve">Table Reservation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Reservation Types</h4>
+                    <ul>
+                        <li><a href="#reserve">Formal Dining Room</a></li>
+                        <li><a href="#reserve">Cultural Mesob Lounge</a></li>
+                        <li><a href="#reserve">Executive VIP Suite</a></li>
+                        <li><a href="#reserve">Chef's Heritage Tasting</a></li>
+                        <li><a href="#reserve">Diplomatic Banquets</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>VIP Club</h4>
+                    <p>Join our Habesha Dining Society for invitations to seasonal tastings and private chef tables.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" aria-label="Email for newsletter">
+                        <button type="button" class="btn btn-primary btn-sm" onclick="handleNewsletter(this)">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Habesha Eatery. Owned & Operated by Hallu's Family. All rights reserved.</p>
+                <div class="footer-meta-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#terms">Reservation Terms</a>
+                    <span>•</span>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- LOGIN & REGISTER MODAL -->
+    <div class="modal-backdrop" id="auth-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-dialog">
+            <button class="modal-close" id="login-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-brand">HABESHA EATERY</div>
+                <h3 id="modal-title">Member Sign In & VIP Concierge</h3>
+                <p>Access your personalized reservations, VIP perks, and expedited bookings.</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" id="tab-login" onclick="switchAuthTab('login')">Sign In</button>
+                <button class="auth-tab-btn" id="tab-register" onclick="switchAuthTab('register')">Join VIP Dining Club</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active">
+                <div class="form-group">
+                    <label for="login-email">Email or Phone Number</label>
+                    <input type="text" id="login-email" placeholder="dawit@example.com" value="dawit@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Password</label>
+                    <input type="password" id="login-pass" value="••••••••" placeholder="Enter password" required>
+                </div>
+                <div class="auth-remember-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked>
+                        <span>Remember my session</span>
+                    </label>
+                    <a href="#" class="forgot-link" onclick="alert('Password reset link sent to registered email.'); return false;">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Sign In to My Account</span>
+                </button>
+                <div class="quick-demo-login">
+                    <span>Fast Demo Sign In:</span>
+                    <button type="button" class="btn-demo-user" onclick="quickLogin('Dawit Hallelujah', 'dawit@example.com', 'VIP Member')">Login as Dawit (VIP)</button>
+                    <button type="button" class="btn-demo-user" onclick="quickLogin('Sara Tesfaye', 'sara@example.com', 'Club Member')">Login as Sara (Member)</button>
+                </div>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form">
+                <div class="form-row grid-2">
+                    <div class="form-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" placeholder="Ato / W/ro Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-phone">Phone Number</label>
+                        <input type="tel" id="reg-phone" placeholder="+251 9..." required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email Address</label>
+                    <input type="email" id="reg-email" placeholder="name@domain.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass">Create Password</label>
+                    <input type="password" id="reg-pass" placeholder="Minimum 8 characters" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Create VIP Account</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- BOOKING SUCCESS CONFIRMATION MODAL -->
+    <div class="modal-backdrop" id="booking-success-modal" aria-hidden="true" role="dialog">
+        <div class="modal-dialog modal-confirmation">
+            <button class="modal-close" onclick="closeSuccessModal()">&times;</button>
+            <div class="confirm-icon">🎉</div>
+            <span class="confirm-tag">CONFIRMED FORMAL RESERVATION</span>
+            <h3 id="confirm-guest-heading">Reservation Confirmed!</h3>
+            <p>Thank you for choosing Habesha Eatery. Your formal table reservation has been recorded in our concierge system.</p>
+
+            <div class="confirmation-summary-card" id="confirmation-details">
+                <!-- Dynamically populated -->
+            </div>
+
+            <div class="confirm-actions">
+                <button class="btn btn-primary" onclick="viewMyReservations()">View In My Bookings</button>
+                <button class="btn btn-secondary" onclick="closeSuccessModal()">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- JavaScript logic -->
+    <script src="script.js"></script>
+</body>
+</html>
